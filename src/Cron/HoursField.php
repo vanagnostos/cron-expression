@@ -27,7 +27,7 @@ class HoursField extends AbstractField
      */
     public function isSatisfiedBy(DateTimeInterface $date, $value): bool
     {
-        return $this->isSatisfied($date->format('H'), $value);
+        return $this->isSatisfied((int)$date->format('H'), $value);
     }
 
     /**
@@ -47,7 +47,7 @@ class HoursField extends AbstractField
             $date = $date->modify(($invert ? '-' : '+') . '1 hour');
             $date = $date->setTimezone($timezone);
 
-            $date = $date->setTime($date->format('H'), $invert ? 59 : 0);
+            $date = $date->setTime((int)$date->format('H'), $invert ? 59 : 0);
             return $this;
         }
 

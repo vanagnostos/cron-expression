@@ -26,16 +26,6 @@ class MinutesFieldTest extends TestCase
     }
 
     /**
-     * @covers \Cron\MinutesField::isSatisfiedBy
-     */
-    public function testChecksIfSatisfied()
-    {
-        $f = new MinutesField();
-        $this->assertTrue($f->isSatisfiedBy(new DateTime(), '?'));
-        $this->assertTrue($f->isSatisfiedBy(new DateTimeImmutable(), '?'));
-    }
-
-    /**
      * @covers \Cron\MinutesField::increment
      */
     public function testIncrementsDate()

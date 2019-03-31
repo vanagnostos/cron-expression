@@ -28,16 +28,6 @@ class HoursFieldTest extends TestCase
     }
 
     /**
-     * @covers \Cron\HoursField::isSatisfiedBy
-     */
-    public function testChecksIfSatisfied()
-    {
-        $f = new HoursField();
-        $this->assertTrue($f->isSatisfiedBy(new DateTime(), '?'));
-        $this->assertTrue($f->isSatisfiedBy(new DateTimeImmutable(), '?'));
-    }
-
-    /**
      * @covers \Cron\HoursField::increment
      */
     public function testIncrementsDate()

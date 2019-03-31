@@ -26,7 +26,7 @@ class MinutesField extends AbstractField
      */
     public function isSatisfiedBy(DateTimeInterface $date, $value):bool
     {
-        return $this->isSatisfied($date->format('i'), $value);
+        return $this->isSatisfied((int)$date->format('i'), $value);
     }
 
     /**
